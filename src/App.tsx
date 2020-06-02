@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Menu defaultIndex={0} onSelect={(index) => alert(index)}>
+      <MenuItem index={0}>
+        Cool Link
+      </MenuItem>
+      <MenuItem index={1} disabled>
+        Cool Link2 
+      </MenuItem>
+      <MenuItem index={2}>
+        Cool Link3
+      </MenuItem>
+    </Menu>
+    </>
   );
 }
 
