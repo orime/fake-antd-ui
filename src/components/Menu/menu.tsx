@@ -1,5 +1,6 @@
 import React, { FC, Children, createContext, useState } from 'react'
 import classNames from 'classnames'
+import styles from './menu.module.css'
 
 // 创建字符字面量
 type MenuMode =  "horizontal" | "vertical"
@@ -39,9 +40,12 @@ const Menu: FC<MenuProps> = (props) => {
     onSelect: handleClick,
   }
 
-  const classes = classNames('viking-menu', className, {
-    'menu-vertical': mode === 'vertical'
-  })
+  // const classes = classNames(styles.vikingMenu, className, {
+  //   'menu-vertical': mode === 'vertical'
+  // })
+
+  const classes = [styles.vikingMenu, mode === 'vertical' && styles.menuVertical].join(' ')
+
   return (
     <ul className={classes} style={style}>
       <MenuContext.Provider value={passedContext}>

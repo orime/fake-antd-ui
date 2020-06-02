@@ -1,0 +1,42 @@
+@value primary #1766ff;
+
+.vikingMenu {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 30px;
+  list-style: none;
+  border-bottom: 1px solid primary;
+  box-shadow: 10px 10px 10px rgba(34,52,123,.3);
+}
+
+.menuItem {
+  padding: 10px 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.menuItem:hover, .menuItem:focus {
+  text-decoration: none;
+}
+
+.menuItem.isDisabled {
+  color: #787878;
+  pointer-events: none;
+  cursor: default;
+}
+
+.menuItem:hover, .isActive {
+  border-bottom: 0.2rem solid primary;
+}
+
+.menuVertical {
+  flex-direction: column;
+  border-bottom: 0px;
+  border-right: 1px solid primary  ;
+}
+
+.menuVertical .menuItem.isActive:hover {
+  border-bottom: 0px;
+  border-left: 02.rem solid primary;
+}
