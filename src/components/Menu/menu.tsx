@@ -44,7 +44,7 @@ const Menu: FC<MenuProps> = (props) => {
   //   'menu-vertical': mode === 'vertical'
   // })
 
-  const classes = [styles.vikingMenu, mode === 'vertical' && styles.menuVertical].join(' ')
+  const classes = [styles.vikingMenu, mode === 'vertical' && styles.menuVertical, className].join(' ')
 
   return (
     <ul className={classes} style={style}>

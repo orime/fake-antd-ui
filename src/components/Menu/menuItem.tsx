@@ -18,7 +18,8 @@ const MenuItem: FC<MenuItemProps> = (props) => {
   //   'is-active': context.index === index
   // })
 
-  const classes = `${styles.menuItem} ${disabled && styles.isDisabled} ${className} ${context.index === index && styles.isActive}`
+  // const classes = `${styles.menuItem} ${disabled && styles.isDisabled} ${className} ${context.index === index && styles.isActive}`
+  const classes = [styles.menuItem, disabled && styles.isDisabled, className, context.index === index && styles.isActive].join(' ')
 
 
   const handleClick = () => {

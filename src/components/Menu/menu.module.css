@@ -10,33 +10,38 @@
   box-shadow: 10px 10px 10px rgba(34,52,123,.3);
 }
 
-.menuItem {
+.vikingMenu .menuItem {
   padding: 10px 10px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.menuItem:hover, .menuItem:focus {
+.vikingMenu .menuItem:hover, .menuItem:focus {
   text-decoration: none;
 }
 
-.menuItem.isDisabled {
+.vikingMenu .menuItem.isDisabled {
   color: #787878;
   pointer-events: none;
   cursor: default;
 }
 
-.menuItem:hover, .isActive {
+.vikingMenu .menuItem:hover, .isActive {
   border-bottom: 0.2rem solid primary;
 }
 
 .menuVertical {
   flex-direction: column;
   border-bottom: 0px;
-  border-right: 1px solid primary  ;
+  border-right: 1px solid primary;
+  margin: 10px 20px;
 }
 
-.menuVertical .menuItem.isActive:hover {
+.menuVertical > .menuItem {
+  border-left: 0.2rem solid transparent;
+}
+
+.menuVertical > .menuItem.isActive, .menuVertical > .menuItem:hover {
   border-bottom: 0px;
-  border-left: 02.rem solid primary;
+  border-left: 0.2rem solid primary;
 }
