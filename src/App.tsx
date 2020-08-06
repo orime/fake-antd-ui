@@ -7,9 +7,10 @@ function App() {
   return (
     <>
     <h1>这里开始测试Button</h1>
-    <Button>Hello Button</Button>
+    <Button onClick={e => {e.preventDefault(); alert('点击了')}}>Hello Button</Button>
     <Button btnType={ButtonType.Primary} disabled>Hello Button</Button>
     <Button btnType={ButtonType.Link} href="http://www.baidu.com">Hello Button</Button>
+    <Button btnType={ButtonType.Danger} href="http://www.baidu.com">Hello Button</Button>
 
     <h1>这里测试Menu</h1>
     <Menu mode="vertical" defaultIndex={0} onSelect={(index) => alert(index)}>
