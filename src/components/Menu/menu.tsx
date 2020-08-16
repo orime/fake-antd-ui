@@ -1,6 +1,6 @@
 import React, { FC, Children, createContext, useState } from 'react'
 import classNames from 'classnames'
-import styles from './menu.module.css'
+// import styles from './menu.module.css'
 
 // 创建字符字面量
 type MenuMode =  "horizontal" | "vertical"
@@ -36,15 +36,16 @@ const Menu: FC<MenuProps> = (props) => {
   }
 
   const passedContext: IMenuContext = {
-    index: currentActive ? currentActive : 0,
+    index: currentActive ? currentActive : 0, // 使用三元表达式防止currentActive可能为undefined报错
     onSelect: handleClick,
   }
 
-  // const classes = classNames(styles.vikingMenu, className, {
-  //   'menu-vertical': mode === 'vertical'
-  // })
+  const classes = classNames('viking-menu', className, {
+    'menu-vertical': mode === 'vertical',
+    'menu-horizontal': mode !== 'vertical',
+  })
 
-  const classes = [styles.vikingMenu, mode === 'vertical' && styles.menuVertical, className].join(' ')
+  // const classes = [styles.vikingMenu, mode === 'vertical' && styles.menuVertical, className].join(' ')
 
   return (
     <ul className={classes} style={style}>
