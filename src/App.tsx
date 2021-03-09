@@ -1,39 +1,53 @@
 import React from 'react';
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
-import Button, {ButtonSize, ButtonType} from './components/Button/button'
+import SubMenu from './components/Menu/subMenu'
+import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import Icon from './components/Icon/icon'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 function App() {
   return (
     <>
-    <h1>这里开始测试Button</h1>
-    <Button onClick={e => {e.preventDefault(); alert('点击了')}}>Hello Button</Button>
-    <Button btnType={ButtonType.Primary} disabled>Hello Button</Button>
-    <Button btnType={ButtonType.Link} href="http://www.baidu.com">Hello Button</Button>
-    <Button btnType={ButtonType.Danger} href="http://www.baidu.com">Hello Button</Button>
-
-    <h1>这里测试Menu</h1>
-    <Menu mode="vertical" defaultIndex={0} onSelect={(index) => alert(index)}>
-      <MenuItem index={0}>
-        Cool Link
+      <h1>这里开始测试Button</h1>
+      <Button onClick={e => { e.preventDefault(); alert('点击了') }}>Hello Button</Button>
+      <Button btnType={ButtonType.Primary} disabled>Hello Button</Button>
+      <Button btnType={ButtonType.Link} href="http://www.baidu.com">Hello Button</Button>
+      <Button btnType={ButtonType.Danger} href="http://www.baidu.com">Hello Button</Button>
+      <h1>这里测试Icon</h1>
+      <Icon icon='coffee' size="10x" theme="danger" />
+      <h1>这里测试Menu</h1>
+      <Menu mode="horizontal" onSelect={(index) => alert(index)}>
+        <MenuItem>
+          Cool Link
+        </MenuItem>
+        <MenuItem disabled>
+          Cool Link2
+        </MenuItem>
+        <SubMenu title="dropdown">
+          <MenuItem>
+            Drop Down1
+          </MenuItem>
+          <MenuItem disabled>
+            Drop Down2
+          </MenuItem>
+        </SubMenu>
+        <MenuItem>
+          Cool Link3
       </MenuItem>
-      <MenuItem index={1} disabled>
-        Cool Link2 
-      </MenuItem>
-      <MenuItem index={2}>
-        Cool Link3
-      </MenuItem>
-    </Menu>
-    <h1>测试一级标题</h1>
-    <h2>测试二级标题</h2>
-    <h3>测试三级标题</h3>
-    <code>
-      const a = 12
-      let b = 14
+      </Menu>
+      <h1>测试一级标题</h1>
+      <h2>测试二级标题</h2>
+      <h3>测试三级标题</h3>
+      <code>
+        const a = 12
+        let b = 14
       function name(params:type) {
-        
-      }
-    </code>
+
+        }
+      </code>
     </>
   );
 }
