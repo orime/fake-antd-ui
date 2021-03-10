@@ -1,18 +1,9 @@
 import React from 'react'
 import classNames from 'classnames'
 
-export enum ButtonSize {
-  Large = 'lg',
-  Small = 'sm'
-}
+type ButtonSize = 'lg' | 'sm'
 
-export enum ButtonType {
-  Primary = 'primary',
-  Default = 'default',
-  Danger = 'danger',
-  Link = 'link'
-}
-
+type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 interface BaseButtonProps {
   classname?: string;
   disabled?: boolean;
@@ -39,9 +30,9 @@ const Button: React.FC<ButtonProps> = (props) => {
   const classes = classNames('btn', className, { // ! 把用户传入的classname也加上去
     [`btn-${btnType}`]: btnType, // ! 这里意为如果传入了btnType，则加上btn-primary类名，否则无该类名
     [`btn-${size}`]: size,
-    'disabled': (btnType === ButtonType.Link) && disabled
+    'disabled': (btnType === "link") && disabled
   })
-  if (btnType === ButtonType.Link && href) {
+  if (btnType === "link" && href) {
     return (
       <a
         className={classes}
@@ -63,7 +54,7 @@ const Button: React.FC<ButtonProps> = (props) => {
 
 Button.defaultProps = {
   disabled: false,
-  btnType: ButtonType.Default
+  btnType: 'default'
 }
 
 export default Button

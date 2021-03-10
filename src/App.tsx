@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
-import Button, { ButtonSize, ButtonType } from './components/Button/button'
+import Button from './components/Button/button'
 import Icon from './components/Icon/icon'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
@@ -15,9 +15,9 @@ function App() {
     <>
       <h3>这里开始测试Button</h3>
       <Button onClick={e => { e.preventDefault(); alert('点击了') }}>Hello Button</Button>
-      <Button btnType={ButtonType.Primary} disabled>Hello Button</Button>
-      <Button btnType={ButtonType.Link} href="http://www.baidu.com">Hello Button</Button>
-      <Button btnType={ButtonType.Danger} href="http://www.baidu.com">Hello Button</Button>
+      <Button btnType="primary" disabled>Hello Button</Button>
+      <Button btnType="danger" href="http://www.baidu.com">Hello Button</Button>
+      <Button btnType="link" href="http://www.baidu.com">Hello Button</Button>
       <h3>这里测试Icon</h3>
       <Icon icon='coffee' size="2x" theme="danger" spin />
       <h3>这里测试横向Menu</h3>
