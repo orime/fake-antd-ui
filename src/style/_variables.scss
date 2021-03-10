@@ -1,4 +1,4 @@
-// 添加中性色彩
+// * 添加中性色板 !default 代表用户可以给变量颜色重新赋值
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -10,7 +10,7 @@ $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
-// 基础色板
+// * 基础色板
 $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -21,7 +21,8 @@ $yellow:  #fadb14 !default;
 $green:   #52c41a !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
-// 系统色板
+
+// * 系统色板
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;

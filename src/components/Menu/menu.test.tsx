@@ -3,7 +3,18 @@ import { render, RenderResult, fireEvent, wait } from '@testing-library/react'
 import Menu, {MenuProps} from './menu'
 import MenuItem from './menuItem'
 import SubMenu from './subMenu'
-
+jest.mock('../Icon/icon', () => {
+  return () => {
+    return <i className="fa" />
+  }
+})
+jest.mock('react-transition-group', () => {
+  return {
+    CSSTransition: (props: any) => {
+      return props.children
+    }
+  }
+})
 const testProps: MenuProps = {
   defaultIndex: '0',
   onSelect: jest.fn(),

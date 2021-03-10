@@ -36,8 +36,8 @@ export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
 const Button: React.FC<ButtonProps> = (props) => {
   const { btnType, size, className, children, disabled, href, ...restProps } = props
-  const classes = classNames('btn', className, {
-    [`btn-${btnType}`]: btnType,
+  const classes = classNames('btn', className, { // ! 把用户传入的classname也加上去
+    [`btn-${btnType}`]: btnType, // ! 这里意为如果传入了btnType，则加上btn-primary类名，否则无该类名
     [`btn-${size}`]: size,
     'disabled': (btnType === ButtonType.Link) && disabled
   })
