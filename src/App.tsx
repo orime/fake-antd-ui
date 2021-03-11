@@ -71,7 +71,7 @@ function App() {
         }
       </code> */}
       <h3>这里开始测试transition</h3>
-      <Button btnType={ButtonType.Primary} onClick={() => setOpen(!open)}>动画切换</Button>
+      <Button btnType="primary" onClick={() => setOpen(!open)}>动画切换</Button>
       <Transition animation="zoom-in-top" in={open} timeout={300}>
         <div>
           <p>这是内容</p>
