@@ -80,6 +80,15 @@
   padding: 0;
   border: 0;
 }
+
+.input-group > .viking-input-group-prepend{
+  border-right: none;
+}
+
+.input-group > .viking-input-group-append{
+  border-left: none;
+}
+
 .input-group > .viking-input-group-prepend,
 .input-group.input-group-append > .viking-input-inner {
   @include border-right-radius(0);
