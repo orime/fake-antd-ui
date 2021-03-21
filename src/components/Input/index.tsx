@@ -1,3 +1,3 @@
-import Input from './input'
+import Input, { InputProps } from './input'
 
 export default Input
