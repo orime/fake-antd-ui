@@ -7,12 +7,15 @@ import Icon from './components/Icon/icon'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import Transition from './components/Transition/transition';
+import UploadTest from './testComp/UploadTest'
 library.add(fas)
 
 function App() {
   const [open, setOpen] = useState(false)
   return (
     <>
+      <h3>这里开始测试文件上传</h3>
+      <UploadTest />
       <h3>这里开始测试Button</h3>
       <Button onClick={e => { e.preventDefault(); alert('点击了') }}>Hello Button</Button>
       <Button btnType="primary" disabled>Hello Button</Button>
